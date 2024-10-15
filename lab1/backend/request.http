@@ -1,0 +1,106 @@
+### Создание нового фильма
+POST http://localhost:8080/backend-1.0-SNAPSHOT/api/v1/coordinates
+Content-Type: application/json
+
+{
+  "x": 5.0,
+  "y": 100
+}
+
+
+### Создание нового фильма
+POST http://localhost:8080/backend-1.0-SNAPSHOT/api/v1/movie
+Content-Type: application/json
+
+{
+  "name": "cubus",
+  "coordinates": {
+    "x": 5.0,
+    "y": 100
+  },
+  "oscarsCount": 4,
+  "budget": 212121,
+  "totalBoxOffice": 825532764,
+  "mpaaRating": "PG_13",
+  "screenwriter": {
+    "name": "Christopher Nolan",
+    "eyeColor": "BLUE",
+    "hairColor": "BLUE",
+    "location": {
+      "x": 1.0,
+      "y": 2.0,
+      "z": 3,
+      "name": "Los Angeles"
+    },
+    "birthday": 18133200
+  },
+  "director": {
+    "name": "Aboba",
+    "eyeColor": "BLUE",
+    "hairColor": "RED",
+    "location": {
+      "x": 1.5,
+      "y": 2.5,
+      "z": 10,
+      "name": "Los Angeles"
+    },
+    "birthday": 18133200
+  },
+  "operator": {
+    "name": "biba",
+    "eyeColor": "BLUE",
+    "hairColor": "RED",
+    "location": {
+      "x": 1.5,
+      "y": 2.5,
+      "z": 10,
+      "name": "Los Angeles"
+    },
+    "birthday": 18133200
+  },
+  "length": 148,
+  "usaBoxOffice": 292576195,
+  "tagline": "Your mind is the scene of the crime.",
+  "genre": "SCIENCE_FICTION"
+}
+
+### Получение фильма по ID
+GET http://localhost:8080/backend-1.0-SNAPSHOT/api/v1/movie/{id}
+
+### Получение всех фильмов
+GET http://localhost:8080/backend-1.0-SNAPSHOT/api/v1/movie
+
+### Обновление фильма по ID
+PUT http://localhost:8080/backend-1.0-SNAPSHOT/api/v1/movie/{id}
+Content-Type: application/json
+
+{
+  "name": "Inception Updated",
+  "coordinates": {
+    "x": 1.5,
+    "y": 2.5
+  },
+  "creationDate": "2024-10-04T10:00:00Z",
+  "oscarsCount": 5,
+  "budget": 180000000,
+  "totalBoxOffice": 850000000,
+  "mpaaRatingEnum": "PG-13",
+  "director": {
+    "id": 1
+  },
+  "screenwriter": {
+    "id": 2
+  },
+  "operator": {
+    "id": 3
+  },
+  "length": 150,
+  "goldenPalmCount": 1,
+  "usaBoxOffice": 650000000,
+  "tagline": "Your mind is the scene of the crime. Updated.",
+  "genre": "SCIENCE_FICTION"
+}
+
+### Удаление фильма по ID
+DELETE http://localhost:8080/backend-1.0-SNAPSHOT/api/v1/movie/1
+
